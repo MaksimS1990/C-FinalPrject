@@ -12,7 +12,10 @@ GetArray(array);
 Console.WriteLine("Ваш массив:");
 PrintArray(array);
 int count = StringsLessThreeElements(array);
-GetNewArray(array);
+Console.WriteLine();
+string[] newarray = GetNewArray(array);
+Console.WriteLine("Результат:");
+PrintNewArray(newarray);
 
 string[] GetArray(string[] array)                // Функция заполнения массива с консоли
 {
@@ -47,7 +50,7 @@ return count;
 
 string[] GetNewArray(string[] array)                // функция заполнения нового массива
 {
-string[] newarray = new string [count];
+    string[] newarray = new string [count];
     int temp = 0;
     for (int i = 0; i < array.Length; i++)
     {
@@ -60,3 +63,10 @@ string[] newarray = new string [count];
     return newarray;
 }
 
+void PrintNewArray(string [] newarray)                 // функция вывода результата нового массива
+{
+    for(int i = 0; i < newarray.Length; i++)
+    {
+        Console.Write(newarray[i] + " ");
+    }
+}
