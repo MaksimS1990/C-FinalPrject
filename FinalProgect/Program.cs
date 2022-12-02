@@ -11,6 +11,7 @@ string[] array = new string [M];
 GetArray(array);
 Console.WriteLine("Ваш массив:");
 PrintArray(array);
+StringsLessThreeElements(array);
 
 string[] GetArray(string[] array)                // Функция заполнения массива с консоли
 {
@@ -28,4 +29,17 @@ void PrintArray(string [] array)                 // функция вывода 
     {
         Console.Write(array[i] + " ");
     }
+}
+
+int StringsLessThreeElements(string[] array)     // функция считает количество элементов в каждой строке из массива
+{
+    int count = 0;
+for (int i = 0; i < array.Length; i++)
+{
+    if (array[i].Length <= 3)
+    {
+    count++;
+    }
+}
+return count;
 }
