@@ -11,7 +11,8 @@ string[] array = new string [M];
 GetArray(array);
 Console.WriteLine("Ваш массив:");
 PrintArray(array);
-StringsLessThreeElements(array);
+int count = StringsLessThreeElements(array);
+GetNewArray(array);
 
 string[] GetArray(string[] array)                // Функция заполнения массива с консоли
 {
@@ -43,3 +44,19 @@ for (int i = 0; i < array.Length; i++)
 }
 return count;
 }
+
+string[] GetNewArray(string[] array)                // функция заполнения нового массива
+{
+string[] newarray = new string [count];
+    int temp = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+    if (array[i].Length <= 3)
+    {
+        newarray[temp] = array[i];
+        temp++;
+    }
+    }
+    return newarray;
+}
+
